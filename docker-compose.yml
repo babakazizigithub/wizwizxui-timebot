@@ -11,7 +11,7 @@ services:
       - ./:/var/www/html/
 
   db:
-    image: mariadb
+    image: mysql:latest
     container_name: wizwiz.db
     restart: always
     environment:
