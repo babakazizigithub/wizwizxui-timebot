@@ -1,0 +1,27 @@
+version: '3.9'
+services:
+  php:
+    container_name: wizwiz.app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: myphp:7.4-apache
+    restart: always
+    volumes:
+      - ./:/var/www/html/
+
+  db:
+    image: mariadb
+    container_name: wizwiz.db
+    restart: always
+    environment:
+      MYSQL_DATABASE: wizwiz.rm
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - ../data/yoursite.rm/mysql:/var/lib/mysql
+    ports:
+      - 3314:3306
+
+networks:
+  default:
+    name: mynet
