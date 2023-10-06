@@ -18,7 +18,7 @@ services:
       MYSQL_DATABASE: wizwiz.rm
       MYSQL_ROOT_PASSWORD: root
     volumes:
-      - ../data/yoursite.rm/mysql:/var/lib/mysql
+      - ../data/wizwiz.rm/mysql:/var/lib/mysql
     ports:
       - 3314:3306
 
